@@ -1391,7 +1391,7 @@ input::-moz-focus-inner {
     font-family: "montserrat-medium", sans-serif;
     font-size: 1.9rem;
     line-height: 1.255;
-    color: black;
+    color: rgb(102, 133, 216);
     margin-top: 0;
     text-align: center;
 }
