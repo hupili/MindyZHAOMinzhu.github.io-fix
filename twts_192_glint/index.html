@@ -10,6 +10,8 @@
     <!--- basic page needs
     ================================================== -->
     <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
     <title>Autism </title>
     <meta name="description" content="">
     <meta name="author" content="">
@@ -99,15 +101,8 @@
                 <p>Perspiciatis hic praesentium nesciunt. Et neque a dolorum <a href='#0'>voluptatem</a> porro iusto sequi veritatis libero enim. Iusto id suscipit veritatis neque reprehenderit.</p>
 
                 <ul class="header-nav__social">
-                    <li>
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
-                    </li>
-                    <li>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                    </li>
+
+                    >
                     <li>
                         <a href="#"><i class="fa fa-behance"></i></a>
                     </li>
@@ -169,15 +164,7 @@
 
 
         <ul class="home-social">
-            <li>
-                <a href="#0"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fa fa-twitter" aria-hidden="true"></i><span>Twiiter</span></a>
-            </li>
-            <li>
-                <a href="#0"><i class="fa fa-instagram" aria-hidden="true"></i><span>Instagram</span></a>
-            </li>
+
 
             <li>
                 <a href="http://datavis.studio/"><i class="fa fa-dribbble" aria-hidden="true"></i><span>Dribbble</span></a>
@@ -228,7 +215,77 @@
             </h1>
         </div> -->
 
-        </div>
+        <script src="https://code.highcharts.com/highcharts.js"></script>
+        <script src="https://code.highcharts.com/modules/series-label.js"></script>
+        <script src="https://code.highcharts.com/modules/exporting.js"></script>
+        <div id="containerc" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+
+        <script type="text/javascript">
+            Highcharts.chart('containerc', {
+                title: {
+                    text: '政府資助各類學前教育計劃等候人數（/年）'
+                },
+                xAxis: {
+                    categories: ['2009-2010', '2010-2011', '2011-2012', '2012-2013', '2013-2014', '2014-2015', '2015-2016', '2016-2017']
+                },
+                labels: {
+                    items: [{
+                        html: '平均等候人數',
+                        style: {
+                            left: '72px',
+                            top: '18px',
+                            color: (Highcharts.theme && Highcharts.theme.textColor) || 'black'
+                        }
+                    }]
+                },
+                series: [{
+                    type: 'column',
+                    name: '早期教育及訓練中心',
+                    data: [2218, 2867, 3467, 3878, 3540, 3853, 4455, 4478]
+                }, {
+                    type: 'column',
+                    name: '特殊幼兒中心',
+                    data: [1042, 1217, 1319, 1404, 1112, 1437, 1690, 1591]
+                }, {
+                    type: 'column',
+                    name: '幼稚園暨幼兒中心兼收弱能兒童計劃',
+                    data: [1156, 1434, 1536, 1779, 1529, 1764, 1965, 1721]
+                }, {
+                    type: 'spline',
+                    name: 'Average',
+                    data: [1472, 1840, 2107, 2354, 2360, 2351, 2703, 2597],
+                    marker: {
+                        lineWidth: 2,
+                        lineColor: Highcharts.getOptions().colors[3],
+                        fillColor: 'white'
+                    }
+                }, {
+                    type: 'pie',
+                    name: '平均等候人數',
+                    data: [{
+                        name: '早期教育及訓練中心',
+                        y: 3594.5,
+                        color: Highcharts.getOptions().colors[0] // 早期教育及訓練中心's color
+                    }, {
+                        name: '特殊幼兒中心',
+                        y: 1351.5,
+                        color: Highcharts.getOptions().colors[1] // 特殊幼兒中心's color
+                    }, {
+                        name: '幼稚園暨幼兒中心兼收弱能兒童計劃',
+                        y: 2223,
+                        color: Highcharts.getOptions().colors[2] // 幼稚園暨幼兒中心兼收弱能兒童計劃's color
+                    }],
+                    center: [100, 80],
+                    size: 100,
+                    showInLegend: false,
+                    dataLabels: {
+                        enabled: false
+                    }
+                }]
+            });
+        </script>
         <div id="space2"></div>
 
         <!-- <div class="row">
@@ -394,77 +451,78 @@
                     </div>
 
 
-                    <div class="row">
-
-                        <!-- <div class="row"> -->
-                        <div class="col-3 col-3-small pics">
-                            <p style="text-align:right;">
-                                <img src="images/face3.jpg" />
-                                <br /> 特殊學校老師林巧婷
-                            </p>
-
-                        </div>
-                        <div class="col-8 col-8-small text1">
-                            <br>
-                            <p>
-                                在特殊學校有十年服務經驗的林巧婷老師，接觸過不少的SEN學生，身為第一線服務的教師，談起香港社會給予SEN學童的資源相當有感觸。
-                                <br> <br>「社會大眾對於SEN的了解越來越多，政府撥款在增加，但是依舊不夠...」
-
-                            </p>
-                            <p>Miss Lam Hau Ting has taught in a special needs school for over 10 years and met numerous Special Education Needs (SEN) children. As a frontline person in this uphill battle, she has much to say about the resources given to
-                                these SEN children.<br> “Our society is beginning to learn more about SEN and the government is giving us more funding, but that is just not enough,” said Miss Lam.
 
 
-                            </p>
-                        </div>
-                        <div class="col-1 col-0-small"></div>
-                        <!-- </div> -->
+                    <!-- <div class="row"> -->
+                    <div class="col-3 col-3-small pics">
+                        <p style="text-align:right;">
+                            <img src="images/face5.jpg" />
+                            <br /> 特殊學校老師林巧婷
+                        </p>
 
-
-
-
-                        <hr>
-
-
-
-
-
-
-                        <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
-
-                            <div class="col-block stats__col ">
-                                <div class="stats__count">8</div>
-                                <h5>香港
-                                    <font color="steelblue"> 自閉症流行率</font> 在世界排行</h5>
-                            </div>
-                            <div class="col-block stats__col">
-                                <div class="stats__count">21150</div>
-                                <h5>2018全港自閉症人數約</h5>
-                            </div>
-                            <div class="col-block stats__col">
-                                <div class="stats__count">8000</div>
-                                <h5>治療每月
-                                    <font color="steelblue">開銷至少</font>
-                                </h5>
-                            </div>
-                            <div class="col-block stats__col">
-                                <div class="stats__count">200</div>
-                                <h5>2019財政預算於社會福利措施（/億）</h5>
-                            </div>
-
-                        </div>
-                        <div id="space"></div>
-
-                        <!-- end about-stats -->
-                        <!-- <div id="container2" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div> -->
-                        <!-- <a href="Highmaps-7.0.3/examples/map-bubble/index.htm"></a> -->
-                        <iframe src="Highmaps-7.0.3/examples/map-bubble/index.htm" height="600" width="100%"></iframe>
-
-                        <!-- <iframe src="Highcharts-7.0.3/examples/combo-dual-axes/index.htm" height="600" width=100% style="border:3px "> </iframe> -->
-                        <div class="about__line"></div>
                     </div>
+                    <div class="col-8 col-8-small text1">
+                        <br>
+                        <p>
+                            在特殊學校有十年服務經驗的林巧婷老師，接觸過不少的SEN學生，身為第一線服務的教師，談起香港社會給予SEN學童的資源相當有感觸。
+                            <br> <br>「社會大眾對於SEN的了解越來越多，政府撥款在增加，但是依舊不夠...」
+
+                        </p>
+                        <p>Miss Lam Hau Ting has taught in a special needs school for over 10 years and met numerous Special Education Needs (SEN) children. As a frontline person in this uphill battle, she has much to say about the resources given to these
+                            SEN children.<br> “Our society is beginning to learn more about SEN and the government is giving us more funding, but that is just not enough,” said Miss Lam.
+
+
+                        </p>
+                    </div>
+                    <div class="col-1 col-0-small"></div>
+                    <!-- </div> -->
+
+
+
+
+                    <hr>
+
+
+
+
+
+
+                    <div class="row about-stats stats block-1-4 block-m-1-2 block-mob-full" data-aos="fade-up">
+
+                        <div class="col-block stats__col ">
+                            <div class="stats__count">8</div>
+                            <h5>香港
+                                <font color="steelblue"> 自閉症流行率</font> 在世界排行</h5>
+                        </div>
+                        <div class="col-block stats__col">
+                            <div class="stats__count">21150</div>
+                            <h5>2018全港自閉症人數約</h5>
+                        </div>
+                        <div class="col-block stats__col">
+                            <div class="stats__count">8000</div>
+                            <h5>治療每月
+                                <font color="steelblue">開銷至少</font>
+                            </h5>
+                        </div>
+                        <div class="col-block stats__col">
+                            <div class="stats__count">200</div>
+                            <h5>2019財政預算於社會福利措施（/億）</h5>
+                        </div>
+                    </div>
+                    <div id="space"></div>
+                    <iframe src="hw4/barchart.html" width="100%" height="500"></iframe>
+
+
+                    <!-- end about-stats -->
+                    <!-- <div id="container2" style="height: 500px; min-width: 310px; max-width: 800px; margin: 0 auto"></div> -->
+                    <!-- <a href="Highmaps-7.0.3/examples/map-bubble/index.htm"></a> -->
+                    <iframe src="Highmaps-7.0.3/examples/map-bubble/index.htm" height="600" width="100%"></iframe>
+
+                    <!-- <iframe src="Highcharts-7.0.3/examples/combo-dual-axes/index.htm" height="600" width=100% style="border:3px "> </iframe> -->
+                    <div class="about__line"></div>
                 </div>
             </div>
+        </div>
         </div>
 
     </section>
@@ -515,7 +573,7 @@
                                         <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round10" onclick="calculateTotal()" />你月入30,000元或以上，決定帶他/她接受自閉症兒童綜合評估及諮詢服務</label><br/>
                                         <label class='radiolabel'><input type="radio"  name="selectedcake" value="Round12" onclick="calculateTotal()" />你決定帶他/她，到多於一間機構接受自閉症兒童綜合評估及諮詢服務。</label><br/>
                                         <br/>
-                                        <label for="fmemail">你的孩子確診了自閉症，你會為他/她安排：</label>
+                                        <label>你的孩子確診了自閉症，你會為他/她安排：</label>
                                         <br>
 
                                         <select id="filling" name='filling' onchange="calculateTotal()">
@@ -578,8 +636,6 @@
 
 
             <!-- end section-header -->
-            <iframe src="hw4/barchart.html" width="100%" height="500"></iframe>
-
 
 
             <!-- <div class="col-6-medium"><img src="images/autism2.png" class="center"></div> -->
@@ -730,12 +786,12 @@
         <!-- <div id="container"></div> -->
         </div>
         <div id="container"></div>
-        < </section>
-            <!-- <iframe src="piechart3.html" width="100%" height="500"></iframe> -->
+    </section>
+    <!-- <iframe src="piechart3.html" width="100%" height="500"></iframe> -->
 
 
 
-            <!-- <div class="col-block service-item" data-aos="fade-up">
+    <!-- <div class="col-block service-item" data-aos="fade-up">
         <div class="service-icon">
             <i class="icon-earth"></i>
         </div>
@@ -766,135 +822,135 @@
         </div>
     </div> -->
 
-            </div>
-            <!-- end services-list -->
-            <!-- <div id="container"></div> -->
+    </div>
+    <!-- end services-list -->
+    <!-- <div id="container"></div> -->
 
 
-            <script src="https://code.highcharts.com/highcharts.js"></script>
-            <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
-            <script src="https://code.highcharts.com/modules/exporting.js"></script>
-            <div id="containerd"></div>
+    <!-- <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <div id="containerd"></div>
 
-            <script type="text/javascript">
-                Highcharts.addEvent(
-                    Highcharts.seriesTypes.networkgraph,
-                    'afterSetOptions',
-                    function(e) {
-                        var colors = Highcharts.getOptions().colors,
-                            i = 0,
-                            nodes = {};
-                        e.options.data.forEach(function(link) {
+    <script type="text/javascript">
+        Highcharts.addEvent(
+            Highcharts.seriesTypes.networkgraph,
+            'afterSetOptions',
+            function(e) {
+                var colors = Highcharts.getOptions().colors,
+                    i = 0,
+                    nodes = {};
+                e.options.data.forEach(function(link) {
 
-                            if (link[0] === 'Proto Indo-European') {
-                                nodes['Proto Indo-European'] = {
-                                    id: 'Proto Indo-European',
-                                    marker: {
-                                        radius: 20
-                                    }
-                                };
-                                nodes[link[1]] = {
-                                    id: link[1],
-                                    marker: {
-                                        radius: 8
-                                    },
-                                    color: colors[i++]
-                                };
-                            } else if (nodes[link[0]] && nodes[link[0]].color) {
-                                nodes[link[1]] = {
-                                    id: link[1],
-                                    color: nodes[link[0]].color
-                                };
+                    if (link[0] === 'Proto Indo-European') {
+                        nodes['Proto Indo-European'] = {
+                            id: 'Proto Indo-European',
+                            marker: {
+                                radius: 20
                             }
-                        });
-
-                        e.options.nodes = Object.keys(nodes).map(function(id) {
-                            return nodes[id];
-                        });
+                        };
+                        nodes[link[1]] = {
+                            id: link[1],
+                            marker: {
+                                radius: 8
+                            },
+                            color: colors[i++]
+                        };
+                    } else if (nodes[link[0]] && nodes[link[0]].color) {
+                        nodes[link[1]] = {
+                            id: link[1],
+                            color: nodes[link[0]].color
+                        };
                     }
-                );
-
-                Highcharts.chart('container', {
-                    chart: {
-                        type: 'networkgraph',
-                        height: '100%'
-                    },
-                    title: {
-                        text: 'The Indo-European Language Tree'
-                    },
-                    subtitle: {
-                        text: 'A Force-Directed Network Graph in Highcharts'
-                    },
-                    plotOptions: {
-                        networkgraph: {
-                            keys: ['from', 'to'],
-                            layoutAlgorithm: {
-                                enableSimulation: true,
-                                friction: -0.9
-                            }
-                        }
-                    },
-                    series: [{
-                        dataLabels: {
-                            enabled: true,
-                            linkFormat: ''
-                        },
-                        data: [
-                            ['特殊學校名單', '視障兒童學校'],
-                            ['特殊學校名單', '聽障兒童學校'],
-                            ['特殊學校名單', '肢體傷殘兒童學校'],
-                            ['特殊學校名單', '智障兒童學校'],
-                            ['特殊學校名單', '群育學校'],
-                            ['特殊學校名單', '醫院學校'],
-                            ['智障兒童學校', '輕度智障兒童學校'],
-                            ['智障兒童學校', '中度智障兒童學校'],
-                            ['智障兒童學校', '輕中度智障兒童學校'],
-                            ['智障兒童學校', '嚴重智障兒童學校'],
-                            ['輕度智障兒童學校', '中華基督教會望覺堂啟愛學校'],
-                            ['輕度智障兒童學校', '匡智獅子會晨崗學校'],
-                            ['輕度智障兒童學校', '路德會救主學校'],
-                            ['輕度智障兒童學校', '中華基督教會基順學校暨資源中心'],
-                            ['輕度智障兒童學校', '才俊學校'],
-                            ['輕度智障兒童學校', '沙田公立學校'],
-                            ['輕度智障兒童學校', '救世軍石湖學校'],
-                            ['輕度智障兒童學校', '三水同鄉會劉本章學校暨特殊教育資源中心'],
-                            ['輕度智障兒童學校', '匡智翠林晨崗學校'],
-                            ['輕度智障兒童學校', '匡智屯門晨崗學校'],
-                            ['中度智障兒童學校', '匡智元朗晨樂學校'],
-                            ['中度智障兒童學校', '保良局余李慕芬紀念學校'],
-                            ['中度智障兒童學校', '保良局百周年學校'],
-                            ['中度智障兒童學校', '禮賢會恩慈學校'],
-                            ['中度智障兒童學校', '基督教中國佈道會聖道學校'],
-                            ['中度智障兒童學校', '明愛樂進學校'],
-                            ['中度智障兒童學校', '明愛樂群學校'],
-                            ['中度智障兒童學校', '匡智松嶺學校'],
-                            ['中度智障兒童學校', '香港四邑商工總會陳南昌紀念學校'],
-                            ['中度智障兒童學校', '匡智元朗晨曦學校'],
-                            ['中度智障兒童學校', '將軍澳培智學校'],
-                            ['中度智障兒童學校', '東華三院群芳啟智學校'],
-                            ['中度智障兒童學校', '匡智屯門晨曦學校'],
-                            ['中度智障兒童學校', '賽馬會匡智學校'],
-                            ['輕中度智障兒童學校', '匡智屯門晨輝學校'],
-                            ['輕中度智障兒童學校', '道慈佛社楊日霖紀念學校'],
-                            ['輕中度智障兒童學校', '賽馬會匡智學校'],
-                            ['輕中度智障兒童學校', '東華三院徐展堂學校'],
-                            ['輕中度智障兒童學校', '香港西區扶輪社匡智晨輝學校'],
-                            ['輕中度智障兒童學校', '天保民學校'],
-                            ['輕中度智障兒童學校', '香海正覺蓮社佛教普光學校'],
-                            ['輕中度智障兒童學校', '匡智張玉瓊晨輝學校'],
-                            ['嚴重智障兒童學校', '明愛樂勤學校'],
-                            ['嚴重智障兒童學校', '明愛樂義學校'],
-                            ['嚴重智障兒童學校', '明愛賽馬會樂仁學校'],
-                            ['嚴重智障兒童學校', '香港心理衛生會–臻和學校'],
-                            ['嚴重智障兒童學校', '匡智松嶺第二校'],
-                            ['嚴重智障兒童學校', '匡智松嶺第三校'],
-                            ['嚴重智障兒童學校', '保良局陳百強伉儷青衣學校'],
-                            ['嚴重智障兒童學校', '保良局羅氏信託學校'],
-                            ['嚴重智障兒童學校', '靈實恩光學校']
-                        ]
-                    }]
                 });
-            </script>
+
+                e.options.nodes = Object.keys(nodes).map(function(id) {
+                    return nodes[id];
+                });
+            }
+        );
+
+        Highcharts.chart('container', {
+            chart: {
+                type: 'networkgraph',
+                height: '100%'
+            },
+            title: {
+                text: 'The Indo-European Language Tree'
+            },
+            subtitle: {
+                text: 'A Force-Directed Network Graph in Highcharts'
+            },
+            plotOptions: {
+                networkgraph: {
+                    keys: ['from', 'to'],
+                    layoutAlgorithm: {
+                        enableSimulation: true,
+                        friction: -0.9
+                    }
+                }
+            },
+            series: [{
+                dataLabels: {
+                    enabled: true,
+                    linkFormat: ''
+                },
+                data: [
+                    ['特殊學校名單', '視障兒童學校'],
+                    ['特殊學校名單', '聽障兒童學校'],
+                    ['特殊學校名單', '肢體傷殘兒童學校'],
+                    ['特殊學校名單', '智障兒童學校'],
+                    ['特殊學校名單', '群育學校'],
+                    ['特殊學校名單', '醫院學校'],
+                    ['智障兒童學校', '輕度智障兒童學校'],
+                    ['智障兒童學校', '中度智障兒童學校'],
+                    ['智障兒童學校', '輕中度智障兒童學校'],
+                    ['智障兒童學校', '嚴重智障兒童學校'],
+                    ['輕度智障兒童學校', '中華基督教會望覺堂啟愛學校'],
+                    ['輕度智障兒童學校', '匡智獅子會晨崗學校'],
+                    ['輕度智障兒童學校', '路德會救主學校'],
+                    ['輕度智障兒童學校', '中華基督教會基順學校暨資源中心'],
+                    ['輕度智障兒童學校', '才俊學校'],
+                    ['輕度智障兒童學校', '沙田公立學校'],
+                    ['輕度智障兒童學校', '救世軍石湖學校'],
+                    ['輕度智障兒童學校', '三水同鄉會劉本章學校暨特殊教育資源中心'],
+                    ['輕度智障兒童學校', '匡智翠林晨崗學校'],
+                    ['輕度智障兒童學校', '匡智屯門晨崗學校'],
+                    ['中度智障兒童學校', '匡智元朗晨樂學校'],
+                    ['中度智障兒童學校', '保良局余李慕芬紀念學校'],
+                    ['中度智障兒童學校', '保良局百周年學校'],
+                    ['中度智障兒童學校', '禮賢會恩慈學校'],
+                    ['中度智障兒童學校', '基督教中國佈道會聖道學校'],
+                    ['中度智障兒童學校', '明愛樂進學校'],
+                    ['中度智障兒童學校', '明愛樂群學校'],
+                    ['中度智障兒童學校', '匡智松嶺學校'],
+                    ['中度智障兒童學校', '香港四邑商工總會陳南昌紀念學校'],
+                    ['中度智障兒童學校', '匡智元朗晨曦學校'],
+                    ['中度智障兒童學校', '將軍澳培智學校'],
+                    ['中度智障兒童學校', '東華三院群芳啟智學校'],
+                    ['中度智障兒童學校', '匡智屯門晨曦學校'],
+                    ['中度智障兒童學校', '賽馬會匡智學校'],
+                    ['輕中度智障兒童學校', '匡智屯門晨輝學校'],
+                    ['輕中度智障兒童學校', '道慈佛社楊日霖紀念學校'],
+                    ['輕中度智障兒童學校', '賽馬會匡智學校'],
+                    ['輕中度智障兒童學校', '東華三院徐展堂學校'],
+                    ['輕中度智障兒童學校', '香港西區扶輪社匡智晨輝學校'],
+                    ['輕中度智障兒童學校', '天保民學校'],
+                    ['輕中度智障兒童學校', '香海正覺蓮社佛教普光學校'],
+                    ['輕中度智障兒童學校', '匡智張玉瓊晨輝學校'],
+                    ['嚴重智障兒童學校', '明愛樂勤學校'],
+                    ['嚴重智障兒童學校', '明愛樂義學校'],
+                    ['嚴重智障兒童學校', '明愛賽馬會樂仁學校'],
+                    ['嚴重智障兒童學校', '香港心理衛生會–臻和學校'],
+                    ['嚴重智障兒童學校', '匡智松嶺第二校'],
+                    ['嚴重智障兒童學校', '匡智松嶺第三校'],
+                    ['嚴重智障兒童學校', '保良局陳百強伉儷青衣學校'],
+                    ['嚴重智障兒童學校', '保良局羅氏信託學校'],
+                    ['嚴重智障兒童學校', '靈實恩光學校']
+                ]
+            }]
+        });
+    </script> -->
     </section>
     <!-- end s-services -->
 
@@ -903,6 +959,7 @@
     ================================================== -->
 
     <section id='works' class="s-works">
+
 
         <div class="intro-wrap">
             <!-- <div class="row services-list block-1-2 block-tab-full"> -->
@@ -918,31 +975,32 @@
         <!-- end intro-wrap -->
 
         <!-- <h3 class="subhead">What We Do</h3> -->
-        <div class="row services-list block-1-2 block-tab-full">
-            <div id="menu">
-                <p>
-                    自閉症學童的教育方面，政府採用"雙軌制"推行特殊教育。把自閉症學生分為輕度或嚴重等級，對於自閉症較嚴重或有多重殘疾的學生，教育局會根據專家的評估和建議，在家長的同意下， 轉介他們入讀特殊學校，以便他們接受加強支援服務。而其他沒有需要入讀特殊學校以接受加強支援服務的有特殊教育需要學生，則入讀普通學校，也就是所謂的「融合教育」計畫，讓他們與普通學生互動、從主流教育中獲益，並且安排社工、心理輔導專家駐校為特殊學生服務。
+        <div class="row">
+            <div class="row services-list block-1-2 block-tab-full">
+                <div id="menu">
+                    <p>
+                        自閉症學童的教育方面，政府採用"雙軌制"推行特殊教育。把自閉症學生分為輕度或嚴重等級，對於自閉症較嚴重或有多重殘疾的學生，教育局會根據專家的評估和建議，在家長的同意下， 轉介他們入讀特殊學校，以便他們接受加強支援服務。而其他沒有需要入讀特殊學校以接受加強支援服務的有特殊教育需要學生，則入讀普通學校，也就是所謂的「融合教育」計畫，讓他們與普通學生互動、從主流教育中獲益，並且安排社工、心理輔導專家駐校為特殊學生服務。
 
-                </p>
-            </div>
-            <div id="menu">
-                <p>Education for autistic children is separated into two kinds by the government. By separating these students into mild or severe, the Education Bureau would refer them to special needs schools, according to assessments and recommendation,
-                    alongside the parents’ agreement, to give them the extra help they need. As for the others, they would go into mainstream schools under the “Integrated education” scheme where they interact and learn alongside regular students. Social
-                    workers and therapists would be put into these schools to assist these students.
-                </p>
-            </div>
+                    </p>
+                </div>
+                <div id="menu">
+                    <p>Education for autistic children is separated into two kinds by the government. By separating these students into mild or severe, the Education Bureau would refer them to special needs schools, according to assessments and recommendation,
+                        alongside the parents’ agreement, to give them the extra help they need. As for the others, they would go into mainstream schools under the “Integrated education” scheme where they interact and learn alongside regular students.
+                        Social workers and therapists would be put into these schools to assist these students.
+                    </p>
+                </div>
 
-            <div id="menu">
-                <p>香港特殊教育的雙軌制已經推行二十多年，然而成效方面在教育界其實不斷地有爭論。在同時採訪過服務於主流學校以及特殊學校的老師後，可以發現老師們的看法也有很大的不同。
-                </p>
+                <div id="menu">
+                    <p>香港特殊教育的雙軌制已經推行二十多年，然而成效方面在教育界其實不斷地有爭論。在同時採訪過服務於主流學校以及特殊學校的老師後，可以發現老師們的看法也有很大的不同。
+                    </p>
+                </div>
+                <div id="menu">
+                    <p>
+                        This kind of system has been used for over 20 years, and remains controversial in the industry of its effectiveness. Teachers of mainstream schools and special needs schools seem to hold a vastly different opinion when it comes to the process and its
+                        results.
+                    </p>
+                </div>
             </div>
-            <div id="menu">
-                <p>
-                    This kind of system has been used for over 20 years, and remains controversial in the industry of its effectiveness. Teachers of mainstream schools and special needs schools seem to hold a vastly different opinion when it comes to the process and its
-                    results.
-                </p>
-            </div>
-        </div>
 
 
         </div>
@@ -951,10 +1009,11 @@
 
         <div class="row">
 
+
             <div class="col-3 col-3-small pics">
                 <p>
                     <img src="images/face1.jpeg" />
-                    <br>
+                    <br> 盧美玉老師
                 </p>
             </div>
 
@@ -962,55 +1021,61 @@
                 <br>
                 <p> 在主流學校服務超過二十年的盧美玉(Lo Mei Yuk)老師，認為融合教育的推行對於特殊學生其實有幫助，可以訓練SEN學生去融入社會。她提到可能是服務的學校規模小，全校師生人數合計只有百餘人，在學生的品格教育方面相當重視。
                     <br>
-                    <h6>Miss Lo Mei Yuk is a teacher with over 20 years of experience in mainstream schools. She believes that the integrated education scheme is actually helpful in training SEN students in integrate into society. She mentioned that due to
+                    <p>Miss Lo Mei Yuk is a teacher with over 20 years of experience in mainstream schools. She believes that the integrated education scheme is actually helpful in training SEN students in integrate into society. She mentioned that due to
                         the small scale of around a hundred people in the school she works in, the students’ character education is highly valued.
 
-                    </h6>
+                    </p>
 
                 </p>
                 <p>主流學校盧美玉老師:<br>「我們都會教小朋友要互相友愛包容，其實在我服務的學校比較沒有特殊生無法適應的問題，小朋友反而會覺得一些比較特殊的學生很特別，反而會更想跟他們親近、一起玩。」</p>
-                <br> <br> “We teach our children to be friendly and inclusive. The schools I work at usually don’t have problems of SEN students having trouble fitting in. But rather, children often finds the SEN students special and want to be closer
-                with them, play with them,” Miss Lo said.
+                “We teach our children to be friendly and inclusive. The schools I work at usually don’t have problems of SEN students having trouble fitting in. But rather, children often finds the SEN students special and want to be closer with them, play with them,”
+                Miss Lo said.
 
 
             </div>
-            <div class="col-1 col-0-small"></div>
-        </div>
-
-        <div class="row">
-            <div class="col-1 col-0-small"></div>
-            <div id="space2"></div>
-
-            <div class="col-8 col-8-small text2">
-
-                <p>
-                    王蓉蓉(Wong Yung Yung)老師投入教職九年，同時擁有在主流學校與特殊學校服務的經驗。王蓉蓉老師表示，她個人相對支持送孩子入讀特殊學校，因為孩子在特殊學校可以受到老師全心全意地照顧，師生關係以及老師與家長的關係都比較緊密，同時特殊學校在職能治療、語言治療等課程方面也相對完善。 Miss Wong Yung Yung has been teaching for nine years, with experience at both mainstream and special needs
-                    schools. She said that she personally supports children to be put into special needs schools, because children there can receive the teachers’ undivided attention, and relationships between teachers and students, even parents are closer.
-                    Furthermore, special needs schools are better equipped for occupation and speech therapy as well.
 
 
-                    <br>對於融合教育中特殊學生的適應問題，王蓉蓉老師也認為其實特殊學生會感受到自己與其他同學的差異，而部分主流學校的老師在帶領特殊學生時多少也會感受到困難。
-                    <br> As to whether SEN children are able to fit in within the integrated education scheme, Miss Wong feels that these children can feel the difference between themselves and the others regardless, and some mainstream school teachers
-                    may find it difficult to lead these SEN children as well.
+            <div class="row">
+                <div class="col-1 col-0-small"></div>
+                <div class="col-8 col-8-small text2">
+                    <br>
+                    <p>
+                        王蓉蓉(Wong Yung Yung)老師投入教職九年，同時擁有在主流學校與特殊學校服務的經驗。王蓉蓉老師表示，她個人相對支持送孩子入讀特殊學校，因為孩子在特殊學校可以受到老師全心全意地照顧，師生關係以及老師與家長的關係都比較緊密，同時特殊學校在職能治療、語言治療等課程方面也相對完善。 Miss Wong Yung Yung has been teaching for nine years, with experience at both mainstream and special needs
+                        schools. She said that she personally supports children to be put into special needs schools, because children there can receive the teachers’ undivided attention, and relationships between teachers and students, even parents are
+                        closer. Furthermore, special needs schools are better equipped for occupation and speech therapy as well.
 
+
+                        <br>對於融合教育中特殊學生的適應問題，王蓉蓉老師也認為其實特殊學生會感受到自己與其他同學的差異，而部分主流學校的老師在帶領特殊學生時多少也會感受到困難。
+                        <br> As to whether SEN children are able to fit in within the integrated education scheme, Miss Wong feels that these children can feel the difference between themselves and the others regardless, and some mainstream school teachers
+                        may find it difficult to lead these SEN children as well.
+                    </p>
                     <p>
                         王蓉蓉老師提到過去在主流學校服務的經歷:<br>「我的同事曾經在一位小二自閉症學生的週記裡，看到小朋友寫說她想自殺，因為她覺得自己跟同學不一樣，沒有辦法跟其他人一起玩，然後課堂上的東西她也不是很明白，覺得特別辛苦。」
-                    </p>“One of my colleague has had one primary two autistic student write in her diary saying that she would want to suicide, because she feels that she is different from the others, and cannot play with the others, nor does she understand
-                    the things taught in class, and find all of this very toilsome.” Miss Wong said.
-                </p>
+                    </p>
+                    <p>
+                        “一些自閉症學童有時會有自言自語的行為，旁人不明白會覺得好奇怪，家長為避免歧視目光會避免坐港鐵。” <br> -- 特殊學校社工
+                    </p>
+                    <p>
+                        “One of my colleague has had one primary two autistic student write in her diary saying that she would want to suicide, because she feels that she is different from the others, and cannot play with the others, nor does she understand the things taught
+                        in class, and find all of this very toilsome.” Miss Wong said.
 
+                    </p>
+                </div>
+                <div class="col-3 col-3-small pics">
+                    <p style="text-align:left;">
+                        <img src="images/face2.jpg" />
+                        <br />
+                    </p>
+                </div>
 
 
             </div>
-            <div class="col-3 col-3-small pics">
-                <p style="text-align:left;">
-                    <img src="images/face2.jpg" />
-                    <br />
-                </p>
 
-            </div>
 
         </div>
+
+        </div>
+
         <div class="col-full">
 
             <div id="space2"></div>
@@ -1022,6 +1087,17 @@
                 雖然老師們對於香港的雙軌制教育有不同看法，不過她們都認為確實在照顧、教育SEN學生時，老師需要花上更多的心力。政府分配給特殊學校的老師人數逐年增加，表面上看似自閉症學童的教育有改善的趨勢。然而，自閉症學生亦在逐年上升。從比例上看，特殊學校照顧自閉症學童的師資依舊短缺。
 
             </h1>
+        </div>
+
+
+        <!-- chart1 -->
+
+
+
+        </div>
+
+
+
         </div>
         </div>
         </div>
@@ -1114,7 +1190,7 @@
                     <div class="cinfo">
                         <h5>Contact Us</h5>
                         <p>
-                            Angie Chan<br> FangYi CHEN<br> Jelly<br>ZHAO Minzhu
+                            Angie Chan<br> FangYi CHEN<br>Cheung Yan Yi<br>ZHAO Minzhu
                         </p>
                     </div>
 
