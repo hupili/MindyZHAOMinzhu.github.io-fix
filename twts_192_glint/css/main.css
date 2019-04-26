@@ -91,7 +91,8 @@ h6,
     font-style: normal;
     font-weight: normal;
     text-rendering: optimizeLegibility;
-    background-color: gray
+    background-color: gray;
+    text-align: left
 }
 
 h1,
@@ -1375,7 +1376,8 @@ input::-moz-focus-inner {
     line-height: 1.255;
     color: black;
     margin-top: 0;
-    text-align: center
+    text-align: center;
+    line-height: 2.5rem
 }
 
 .display-6 {
@@ -1384,7 +1386,8 @@ input::-moz-focus-inner {
     line-height: 1.255;
     color: rgb(155, 147, 147);
     margin-top: 0;
-    text-align: center
+    text-align: center;
+    line-height: 2.5rem
 }
 
 .display-7 {
@@ -1394,6 +1397,7 @@ input::-moz-focus-inner {
     color: rgb(124, 181, 236);
     margin-top: 0;
     text-align: center;
+    line-height: 2.5rem
 }
 
 .display-2--light {
