@@ -1,0 +1,119 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="Highcharts-7.0.3//code/modules/data.js"></script>
+    <script src="Highcharts-7.0.3//code/modules/drilldown.js"></script>
+
+    <div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: 'Prevalence of autism spectrum disorder among children in select countries worldwide as of 2018 (per 10,000 children)'
+            },
+            subtitle: {
+                text: 'Source: <a href="https://www.statista.com/statistics/676354/autism-rate-among-children-select-countries-worldwide/" target="_blank">The Statistics Portal</a>'
+            },
+            xAxis: {
+                categories: [
+                    'United States',
+                    'Japan',
+                    'Canada',
+                    'United Kingdom',
+                    'Ireland',
+                    'Denmark',
+                    'Australia',
+                    'Hong Kong(SAR of China)',
+                    'Brazil',
+                    'Portugal',
+
+                ],
+                crosshair: true
+
+            },
+            yAxis: {
+                title: {
+                    text: 'Number of children with autism per 10,000 children'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            plotOptions: {
+                series: {
+                    borderWidth: 0,
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.y}'
+                    }
+                }
+            },
+            tooltip: {
+                headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
+                pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}<br/>'
+            },
+            "series": [{
+                "name": "Country",
+                "colorByPoint": true,
+                "data": [{
+                    "name": "United States",
+                    "y": 168,
+                    "drilldown": "United States"
+                }, {
+                    "name": "Japan",
+                    "y": 161,
+                    "drilldown": "Japan"
+                }, {
+                    "name": "Canada",
+                    "y": 152,
+                    "drilldown": "Canada"
+                }, {
+                    "name": "United Kingdom",
+                    "y": 100,
+                    "drilldown": "United Kingdom"
+                }, {
+                    "name": "Ireland",
+                    "y": 100,
+                    "drilldown": "Ireland"
+                }, {
+                    "name": "Denmark",
+                    "y": 69,
+                    "drilldown": "Denmark"
+                }, {
+                    "name": "Australia",
+                    "y": 67,
+                    "drilldown": "Australia"
+                }, {
+                    "name": "Hong Kong(SAR of China)",
+                    "y": 49,
+                    "drilldown": "Hong Kong(SAR of China)"
+                }, {
+                    "name": "Brazil",
+                    "y": 27,
+                    "drilldown": "Brazil"
+                }, {
+                    "name": "Portugal",
+                    "y": 9.2,
+                    "drilldown": "Portugal"
+                }]
+            }]
+
+        });
+    </script>
+</body>
+
+</html>

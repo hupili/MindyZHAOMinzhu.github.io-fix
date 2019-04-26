@@ -1,0 +1,81 @@
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
+
+    <style type="text/css">
+
+    </style>
+</head>
+
+<body>
+    <script src="Highcharts-7.0.3/code/highcharts.js"></script>
+    <script src="Highcharts-7.0.3/code/modules/exporting.js"></script>
+    <script src="Highcharts-7.0.3/code/modules/export-data.js"></script>
+
+    <div id="container" style="min-width: 310px; max-width: 1000px; height: 400px; margin: 0 auto"></div>
+
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: 'No. of autism students and corresponding coach teachers in Hong Kong'
+            },
+            subtitle: {
+                text: 'Source: Education Bureau'
+            },
+            xAxis: {
+                categories: ['2010-2011', '2011-2012', '2012-2013', '2013-2014', '2014-2015', '2015-2016', '2016-2017', '2017-2018'],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: 'No. of Autism Students/Teachers',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: 'justify'
+                }
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: 40,
+                y: 80,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: 'No. of autism students',
+                data: [2009, 2141, 2253, 2386, 2477, 2594, 2737, 2903]
+            }, {
+                name: 'No. of autistic support teachers',
+                data: [158, 167, 176, 189, 197, 212, 221, 236]
+            }]
+        });
+    </script>
+</body>
+
+</html>

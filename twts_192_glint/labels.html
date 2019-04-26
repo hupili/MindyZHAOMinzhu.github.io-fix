@@ -1,0 +1,143 @@
+<html>
+
+<head>
+    <style>
+        #container {
+            min-width: 320px;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/networkgraph.js"></script>
+
+    <div id="container"></div>
+    <script type="text/javascript">
+        Highcharts.addEvent(Highcharts.seriesTypes.networkgraph, 'afterSetOptions', function(e) {
+            var colors = Highcharts.getOptions().colors,
+                i = 0,
+                nodes = {};
+            e.options.data.forEach(function(link) {
+                if (link[0] === '特殊學校名單') {
+                    nodes['特殊學校名單'] = {
+                        id: '特殊學校名單',
+                        marker: {
+                            radius: 25
+                        }
+                    };
+                    nodes[link[1]] = {
+                        id: link[1],
+                        marker: {
+                            radius: 15
+                        },
+                        color: colors[i++]
+                    };
+                } else if (nodes[link[0]] && nodes[link[0]].color) {
+                    nodes[link[1]] = {
+                        id: link[1],
+                        color: nodes[link[0]].color
+                    };
+                }
+            });
+            e.options.nodes = Object.keys(nodes).map(function(id) {
+                return nodes[id];
+            });
+        });
+        Highcharts.chart('container', {
+            chart: {
+                type: 'networkgraph',
+                marginTop: 80
+            },
+            title: {
+                text: '特殊教育樹'
+            },
+            subtitle: {
+                text: 'A Force-Directed Network Graph in Highcharts'
+            },
+            plotOptions: {
+                networkgraph: {
+                    keys: ['from',
+                        'to'
+                    ],
+                    layoutAlgorithm: {
+                        enableSimulation: true,
+                        integration: 'verlet',
+                        linkLength: 100
+                    }
+                }
+            },
+            series: [{
+                marker: {
+                    radius: 6
+                },
+                dataLabels: {
+                    enabled: true,
+                    textPath: {
+                        enabled: true
+                    },
+                    linkFormat: '',
+                    allowOverlap: true
+                },
+                data: [
+                    ['特殊學校名單', '視障兒童學校'],
+                    ['特殊學校名單', '聽障兒童學校'],
+                    ['特殊學校名單', '肢體傷殘兒童學校'],
+                    ['特殊學校名單', '智障兒童學校'],
+                    ['特殊學校名單', '群育學校'],
+                    ['特殊學校名單', '醫院學校'],
+                    ['智障兒童學校', '輕度智障兒童學校'],
+                    ['智障兒童學校', '中度智障兒童學校'],
+                    ['智障兒童學校', '輕中度智障兒童學校'],
+                    ['智障兒童學校', '嚴重智障兒童學校'],
+                    ['輕度智障兒童學校', '中華基督教會望覺堂啟愛學校'],
+                    ['輕度智障兒童學校', '匡智獅子會晨崗學校'],
+                    ['輕度智障兒童學校', '路德會救主學校'],
+                    ['輕度智障兒童學校', '中華基督教會基順學校暨資源中心'],
+                    ['輕度智障兒童學校', '才俊學校'],
+                    ['輕度智障兒童學校', '沙田公立學校'],
+                    ['輕度智障兒童學校', '救世軍石湖學校'],
+                    ['輕度智障兒童學校', '三水同鄉會劉本章學校暨特殊教育資源中心'],
+                    ['輕度智障兒童學校', '匡智翠林晨崗學校'],
+                    ['輕度智障兒童學校', '匡智屯門晨崗學校'],
+                    ['中度智障兒童學校', '匡智元朗晨樂學校'],
+                    ['中度智障兒童學校', '保良局余李慕芬紀念學校'],
+                    ['中度智障兒童學校', '保良局百周年學校'],
+                    ['中度智障兒童學校', '禮賢會恩慈學校'],
+                    ['中度智障兒童學校', '基督教中國佈道會聖道學校'],
+                    ['中度智障兒童學校', '明愛樂進學校'],
+                    ['中度智障兒童學校', '明愛樂群學校'],
+                    ['中度智障兒童學校', '匡智松嶺學校'],
+                    ['中度智障兒童學校', '香港四邑商工總會陳南昌紀念學校'],
+                    ['中度智障兒童學校', '匡智元朗晨曦學校'],
+                    ['中度智障兒童學校', '將軍澳培智學校'],
+                    ['中度智障兒童學校', '東華三院群芳啟智學校'],
+                    ['中度智障兒童學校', '匡智屯門晨曦學校'],
+                    ['中度智障兒童學校', '賽馬會匡智學校'],
+                    ['輕中度智障兒童學校', '匡智屯門晨輝學校'],
+                    ['輕中度智障兒童學校', '道慈佛社楊日霖紀念學校'],
+                    ['輕中度智障兒童學校', '賽馬會匡智學校'],
+                    ['輕中度智障兒童學校', '東華三院徐展堂學校'],
+                    ['輕中度智障兒童學校', '香港西區扶輪社匡智晨輝學校'],
+                    ['輕中度智障兒童學校', '天保民學校'],
+                    ['輕中度智障兒童學校', '香海正覺蓮社佛教普光學校'],
+                    ['輕中度智障兒童學校', '匡智張玉瓊晨輝學校'],
+                    ['嚴重智障兒童學校', '明愛樂勤學校'],
+                    ['嚴重智障兒童學校', '明愛樂義學校'],
+                    ['嚴重智障兒童學校', '明愛賽馬會樂仁學校'],
+                    ['嚴重智障兒童學校', '香港心理衛生會–臻和學校'],
+                    ['嚴重智障兒童學校', '匡智松嶺第二校'],
+                    ['嚴重智障兒童學校', '匡智松嶺第三校'],
+                    ['嚴重智障兒童學校', '保良局陳百強伉儷青衣學校'],
+                    ['嚴重智障兒童學校', '保良局羅氏信託學校'],
+                    ['嚴重智障兒童學校', '靈實恩光學校']
+                ]
+            }]
+        });
+    </script>
+</body>
+
+</html>
