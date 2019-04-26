@@ -1484,7 +1484,7 @@ input::-moz-focus-inner {
  * ------------------------------------------------------------------- */
 
 .section-header {
-    text-align: center;
+    /* text-align: center; */
     position: relative;
     margin-bottom: 3.6rem;
     max-width: 960px;
@@ -2642,7 +2642,7 @@ html.no-csstransitions .home-content__main {
     .services-list {
         margin-top: 4.2rem;
         max-width: 500px;
-        text-align: center;
+        /* text-align: center; */
     }
     .services-list .service-item:nth-child(n) {
         padding-right: 15px;
