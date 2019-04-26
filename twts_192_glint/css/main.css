@@ -1400,6 +1400,16 @@ input::-moz-focus-inner {
     line-height: 2.5rem
 }
 
+.display-8 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.255;
+    color: black;
+    margin-top: 0;
+    text-align: center;
+    line-height: 2.5rem
+}
+
 .display-2--light {
     color: #FFFFFF;
 }
@@ -2688,7 +2698,7 @@ html.no-csstransitions .home-content__main {
 }
 
 .s-works .intro-wrap {
-    padding: 15rem 0 25.2rem;
+    /* padding: 15rem 0 25.2rem; */
     background: #111111;
 }
 
