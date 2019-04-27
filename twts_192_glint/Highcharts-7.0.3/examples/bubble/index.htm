@@ -1,140 +1,169 @@
 <!DOCTYPE HTML>
 <html>
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Highcharts Example</title>
 
-		<style type="text/css">
-.highcharts-tooltip h3 {
-    margin: 0.3em 0;
-}
-		</style>
-	</head>
-	<body>
-<script src="../../code/highcharts.js"></script>
-<script src="../../code/highcharts-more.js"></script>
-<script src="../../code/modules/exporting.js"></script>
-<script src="../../code/modules/export-data.js"></script>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Highcharts Example</title>
 
-<div id="container" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
-
-
-		<script type="text/javascript">
-
-Highcharts.chart('container', {
-
-    chart: {
-        type: 'bubble',
-        plotBorderWidth: 1,
-        zoomType: 'xy'
-    },
-
-    legend: {
-        enabled: false
-    },
-
-    title: {
-        text: 'Sugar and fat intake per country'
-    },
-
-    subtitle: {
-        text: 'Source: <a href="http://www.euromonitor.com/">Euromonitor</a> and <a href="https://data.oecd.org/">OECD</a>'
-    },
-
-    xAxis: {
-        gridLineWidth: 1,
-        title: {
-            text: 'Daily fat intake'
-        },
-        labels: {
-            format: '{value} gr'
-        },
-        plotLines: [{
-            color: 'black',
-            dashStyle: 'dot',
-            width: 2,
-            value: 65,
-            label: {
-                rotation: 0,
-                y: 15,
-                style: {
-                    fontStyle: 'italic'
-                },
-                text: 'Safe fat intake 65g/day'
-            },
-            zIndex: 3
-        }]
-    },
-
-    yAxis: {
-        startOnTick: false,
-        endOnTick: false,
-        title: {
-            text: 'Daily sugar intake'
-        },
-        labels: {
-            format: '{value} gr'
-        },
-        maxPadding: 0.2,
-        plotLines: [{
-            color: 'black',
-            dashStyle: 'dot',
-            width: 2,
-            value: 50,
-            label: {
-                align: 'right',
-                style: {
-                    fontStyle: 'italic'
-                },
-                text: 'Safe sugar intake 50g/day',
-                x: -10
-            },
-            zIndex: 3
-        }]
-    },
-
-    tooltip: {
-        useHTML: true,
-        headerFormat: '<table>',
-        pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
-            '<tr><th>Fat intake:</th><td>{point.x}g</td></tr>' +
-            '<tr><th>Sugar intake:</th><td>{point.y}g</td></tr>' +
-            '<tr><th>Obesity (adults):</th><td>{point.z}%</td></tr>',
-        footerFormat: '</table>',
-        followPointer: true
-    },
-
-    plotOptions: {
-        series: {
-            dataLabels: {
-                enabled: true,
-                format: '{point.name}'
-            }
+    <style type="text/css">
+        .highcharts-tooltip h3 {
+            margin: 0.3em 0;
         }
-    },
+    </style>
+</head>
 
-    series: [{
-        data: [
-            { x: 95, y: 95, z: 13.8, name: 'BE', country: 'Belgium' },
-            { x: 86.5, y: 102.9, z: 14.7, name: 'DE', country: 'Germany' },
-            { x: 80.8, y: 91.5, z: 15.8, name: 'FI', country: 'Finland' },
-            { x: 80.4, y: 102.5, z: 12, name: 'NL', country: 'Netherlands' },
-            { x: 80.3, y: 86.1, z: 11.8, name: 'SE', country: 'Sweden' },
-            { x: 78.4, y: 70.1, z: 16.6, name: 'ES', country: 'Spain' },
-            { x: 74.2, y: 68.5, z: 14.5, name: 'FR', country: 'France' },
-            { x: 73.5, y: 83.1, z: 10, name: 'NO', country: 'Norway' },
-            { x: 71, y: 93.2, z: 24.7, name: 'UK', country: 'United Kingdom' },
-            { x: 69.2, y: 57.6, z: 10.4, name: 'IT', country: 'Italy' },
-            { x: 68.6, y: 20, z: 16, name: 'RU', country: 'Russia' },
-            { x: 65.5, y: 126.4, z: 35.3, name: 'US', country: 'United States' },
-            { x: 65.4, y: 50.8, z: 28.5, name: 'HU', country: 'Hungary' },
-            { x: 63.4, y: 51.8, z: 15.4, name: 'PT', country: 'Portugal' },
-            { x: 64, y: 82.9, z: 31.3, name: 'NZ', country: 'New Zealand' }
-        ]
-    }]
+<body>
+    <script src="../../code/highcharts.js"></script>
+    <script src="../../code/highcharts-more.js"></script>
+    <script src="../../code/modules/exporting.js"></script>
+    <script src="../../code/modules/export-data.js"></script>
 
-});
-		</script>
-	</body>
+    <div id="container" style="height: 400px; min-width: 310px; max-width: 600px; margin: 0 auto"></div>
+
+
+    <script type="text/javascript">
+        Highcharts.chart('container', {
+
+            chart: {
+                type: 'bubble',
+                plotBorderWidth: 1,
+                zoomType: 'xy'
+            },
+
+            legend: {
+                enabled: false
+            },
+
+            title: {
+                text: '近年香港自閉症學童人數'
+            },
+
+            xAxis: {
+                gridLineWidth: 1,
+                title: {
+                    text: '年份'
+                },
+                labels: {
+                    format: '{value} '
+                },
+                plotLines: [{
+                    color: 'black',
+                    dashStyle: 'dot',
+                    width: 2,
+                    value: 65,
+                    label: {
+                        rotation: 0,
+                        y: 15,
+                        style: {
+                            fontStyle: 'italic'
+                        },
+                        text: 'Safe fat intake 65g/day'
+                    },
+                    zIndex: 3
+                }]
+            },
+
+            yAxis: {
+                startOnTick: false,
+                endOnTick: false,
+                title: {
+                    text: '香港自閉症學童人數'
+                },
+                labels: {
+                    format: '{value} '
+                },
+                maxPadding: 0.2,
+                plotLines: [{
+                    color: 'black',
+                    dashStyle: 'dot',
+                    width: 2,
+                    value: 50,
+                    label: {
+                        align: 'right',
+                        style: {
+                            fontStyle: 'italic'
+                        },
+                        text: 'Safe sugar intake 50g/day',
+                        x: -10
+                    },
+                    zIndex: 3
+                }]
+            },
+
+            tooltip: {
+                useHTML: true,
+                headerFormat: '<table>',
+                pointFormat: '<tr><th colspan="2"><h3>{point.country}</h3></th></tr>' +
+                    '<tr><th>學年:</th><td>{point.x}</td></tr>' +
+                    '<tr><th>自閉症學生人數:</th><td>{point.y}</td></tr>',
+                footerFormat: '</table>',
+                followPointer: true
+            },
+
+            plotOptions: {
+                series: {
+                    dataLabels: {
+                        enabled: true,
+                        format: '{point.name}'
+                    }
+                }
+            },
+
+            series: [{
+                data: [{
+                    x: 2010,
+                    y: 4769,
+                    z: 4769,
+                    name: '2010-2011',
+                    country: '2010-2011'
+                }, {
+                    x: 2011,
+                    y: 5511,
+                    z: 5511,
+                    name: '2011-2012',
+                    country: '2011-2012'
+                }, {
+                    x: 2012,
+                    y: 6403,
+                    z: 6403,
+                    name: '2012-2013',
+                    country: '2012-2013'
+                }, {
+                    x: 2013,
+                    y: 7356,
+                    z: 7356,
+                    name: '2013-2014',
+                    country: '2013-2014'
+                }, {
+                    x: 2014,
+                    y: 8267,
+                    z: 8267,
+                    name: '2014-2015',
+                    country: '2014-2015'
+                }, {
+                    x: 2015,
+                    y: 9394,
+                    z: 9394,
+                    name: '2015-2016',
+                    country: '2015-2016'
+                }, {
+                    x: 2016,
+                    y: 10557,
+                    z: 10557,
+                    name: '2016-2017',
+                    country: '2016-2017'
+                }, {
+                    x: 2017,
+                    y: 11613,
+                    z: 11613,
+                    name: '2017-2018',
+                    country: '2017-2018'
+                }]
+            }]
+
+        });
+    </script>
+</body>
+
 </html>
