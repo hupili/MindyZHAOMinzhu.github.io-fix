@@ -118,6 +118,15 @@ body {
     color: white;
 }
 
+/* wordbox */
+
+.wordbox {
+    background-color: rgb(24, 25, 26);
+    overflow-x: hidden;
+    font-family: 'Lato', sans-serif;
+    color: rgb(121, 118, 118);
+    font-size: 1.25rem;
+}
 
 /* jumbotron */
 
@@ -128,9 +137,10 @@ body {
 }
 
 h3.heading {
-    font: size 1.9reml;
+    font-size: 2.5rem;
     font-weight: 700;
     text-transform: uppercase;
+    margin: 1.9rem;
     margin-bottom: 1.9rem;
 }
 
