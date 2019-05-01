@@ -1,0 +1,239 @@
+/*--- Extra Bootstrap Column Padding --*/
+
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+/*--- Bootstrap Mobile Gutter Fix --*/
+
+.row,
+.container-fluid {
+    margin-left: 0px!important;
+    margin-right: 0px!important;
+}
+
+
+/*--- Fix for Fixed Navbar jumping on scroll --*/
+
+.fixed-top {
+    -webkit-backface-visibility: hidden;
+}
+
+
+/*--- Fixed Landing Page Section --*/
+
+.landing {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: table;
+    z-index: -1;
+}
+
+.home-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.home-inner {
+    position: fixed;
+    display: table;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+
+/*--- iOS Fixed Background Image --*/
+
+.fixed-background {
+    position: relative;
+    width: 100%;
+}
+
+.fixed-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999!important;
+}
+
+.fixed {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+
+/* ------------------------------------------------------------------- 
+ * ## display headings
+ * ------------------------------------------------------------------- */
+
+.display-1 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 7.8rem;
+    line-height: 1.25;
+    color: #000000;
+    margin-top: 0;
+}
+
+.display-1--light {
+    color: #000000;
+}
+
+.display-2 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 5.2rem;
+    line-height: 1.255;
+    color: #000000;
+    margin-top: 0;
+    text-align: center;
+}
+
+.display-3 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 3.2rem;
+    line-height: 1.255;
+    color: #000000;
+    margin-top: 0;
+    text-align: center
+}
+
+.display-4 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1.0rem;
+    line-height: 1.765;
+    color: #868686;
+    margin-top: 0;
+    text-align: left
+}
+
+.display-5 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 2.1rem;
+    line-height: 1.255;
+    color: #868686;
+    margin-top: 0;
+    text-align: center;
+    line-height: 2.5rem
+}
+
+.display-6 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 2.1rem;
+    line-height: 1.255;
+    color: rgb(155, 147, 147);
+    margin-top: 0;
+    text-align: center;
+    line-height: 2.5rem
+}
+
+.display-7 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1.0rem;
+    line-height: 1.255;
+    color: #70a2db;
+    margin-top: 0;
+    text-align: center;
+    line-height: 1.765rem
+}
+
+.display-8 {
+    font-family: "montserrat-medium", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.255;
+    /* color: black; */
+    margin-top: 0;
+    text-align: center;
+    line-height: 1.765rem
+}
+
+.display-2--light {
+    color: #FFFFFF;
+}
+
+.subhead+.display-2 {
+    margin-top: .6rem;
+}
+
+.subhead {
+    font-family: "montserrat-bold", sans-serif;
+    font-size: 1.7rem;
+    line-height: 1.333;
+    text-transform: uppercase;
+    letter-spacing: .25rem;
+    color: #FFFFFF;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.subhead--dark {
+    color: #000000;
+}
+
+
+/* ------------------------------------------------------------------- 
+* responsive:
+* display headings
+* ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1200px) {
+    .display-1 {
+        font-size: 7.2rem;
+    }
+    .display-2 {
+        font-size: 4.4rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .display-1 {
+        font-size: 6.5rem;
+    }
+    .display-2 {
+        font-size: 4rem;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .display-1 {
+        font-size: 5rem;
+    }
+    .display-2 {
+        font-size: 3.3rem;
+    }
+    .subhead {
+        font-size: 1.5rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .display-1 {
+        font-size: 4.2rem;
+    }
+    .display-2 {
+        font-size: 3rem;
+    }
+}
