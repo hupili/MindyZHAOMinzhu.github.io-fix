@@ -46,7 +46,8 @@ body {
 /* Start of landing page */
 
 .home-inner {
-    background-image: url(img/background.jpeg);opacity: 0.5;
+    background-image: url(img/background.jpeg);
+    opacity: 0.5;
     min-height: 1000px;
 }
 
@@ -56,7 +57,7 @@ body {
     position: absolute;
     top: 38%;
     z-index: 1;
-    color:rgb(255, 255, 255);
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
 }
 
@@ -106,17 +107,18 @@ body {
     font-size: 1.2rem;
     text-transform: uppercase;
     margin: 1rem;
-    border-color:  rgb(124, 181, 236);
-    background-color:  rgb(124, 181, 236);
+    border-color: rgb(124, 181, 236);
+    background-color: rgb(124, 181, 236);
     color: white;
 }
 
 .btn-secondary:hover,
 .btn-secondary:focus {
-    border-color:  rgb(86, 90, 94);
+    border-color: rgb(86, 90, 94);
     background-color: rgb(80, 82, 85);
     color: white;
 }
+
 
 /* wordbox */
 
@@ -127,6 +129,7 @@ body {
     color: rgb(121, 118, 118);
     font-size: 1.25rem;
 }
+
 
 /* jumbotron */
 
@@ -144,15 +147,23 @@ h3.heading {
     margin-bottom: 1.9rem;
 }
 
+h3.heading1 {
+    font-size: 2.0rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 1.9rem;
+    margin-bottom: 1.9rem;
+}
+
 .heading-underline {
     width: 3rem;
     height: .2rem;
-    background-color: rgb(124, 181, 236);
+    background-color: rgb(155, 163, 170);
     margin: 0 auto 2rem;
 }
 
 .feature svg.svg-inline--fa {
-    color:  rgb(124, 181, 236);
+    color: rgb(124, 181, 236);
 }
 
 .feature h3 {
@@ -211,19 +222,19 @@ h3.heading {
 }
 
 blockquote .svg-inline--fa {
-    color:  rgb(124, 181, 236);
+    color: rgb(124, 181, 236);
     margin: 1rem;
 }
 
 .clients-hr {
-    border-top: .05rem solid  rgb(124, 181, 236);
+    border-top: .05rem solid rgb(124, 181, 236);
 }
 
 
 /* footer */
 
 footer {
-    background-color:  rgb(124, 181, 236);
+    background-color: rgb(124, 181, 236);
     color: white;
     padding: 2rem 0 2rem;
     margin-top: 1rem;
@@ -458,7 +469,7 @@ Extra (xl) large devices (large desktops, 1200px and up)
 
 .econ-select {
     background-color: white;
-    border: 2px solid  rgb(124, 181, 236);
+    border: 2px solid rgb(124, 181, 236);
     border-radius: 4px;
     margin: 10px;
     font-size: 100%;
